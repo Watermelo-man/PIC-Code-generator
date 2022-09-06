@@ -42,5 +42,6 @@ private:
     Ui::MainWindow *ui;
     chooseMC *MCchoose;
     QString MCName;
+    void FillTabs();
 };
 #endif // MAINWINDOW_H

@@ -12,11 +12,13 @@ void csvHandler::openPIC(QString path, int perefCount)
     reg.checkRegExp();
 
     QFile PICbase (path);
+
     if (!PICbase.open(QIODevice::ReadOnly))
     {
         qDebug() << PICbase.errorString();
         //return NULL;
     }
+
     QStringList wordList;
 
     while (!PICbase.atEnd())

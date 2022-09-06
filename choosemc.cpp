@@ -48,6 +48,8 @@ void chooseMC::on_MClist_itemClicked(QListWidgetItem *item)
         QByteArray line = perlist.readLine();
         wordList.append(line.split(',').first());
     }
+    for(int i = 0; i<=wordList.size()-1;i++)
+        wordList[i].replace(";"," ");
     ui->perlistWidget->addItems(wordList);
     perlist.close();
 

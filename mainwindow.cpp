@@ -66,9 +66,16 @@ void MainWindow::on_actionOpenPIcController_triggered()
 void MainWindow::getMCName(QString name)
 {
     MCName = name;
-    QFile perlist(name+".txt");
-    qDebug() <<name+".txt";
-    ui->label_2->setText(name);
+    FillTabs();
+}
+
+void MainWindow::FillTabs()
+{
+    ui->label_2->setText(MCName);
+
+    QFile perlist(MCName+".txt");
+    qDebug() <<MCName+".txt";
+
     if (!perlist.open(QIODevice::ReadOnly)) {
     qDebug() << perlist.errorString();
     //return NULL;
